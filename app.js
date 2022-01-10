@@ -7,20 +7,20 @@ const menu = {
     get appetizers() {
         return this._courses.appetizers;
     },
-    set appetizers(appetizers) {
-        this._courses.appetizers = appetizers;
+    set appetizers(appetizer) {
+        this._courses.appetizers = appetizer;
     },
     get mains() {
         return this._courses.mains;
     },
-    set mains(mains) {
-        this._courses.mains = mains;
+    set mains(main) {
+        this._courses.mains = main;
     },
     get desserts() {
         return this._courses.desserts;
     },
-    set desserts(desserts) {
-        this._courses.desserts = desserts;
+    set desserts(dessert) {
+        this._courses.desserts = dessert;
     },
     get courses(){
         return {
@@ -38,11 +38,11 @@ const menu = {
     },
     getRandomDishFromCourse (courseName) {
         const dishes = this._courses[courseName];
-        const randomIndex = Math.Floor(Math.random()*dishes.length);
+        const randomIndex = Math.floor(Math.random()*dishes.length);
         return dishes[randomIndex];
     },
     generateRandomMeal() {
-        const appetizer = this.getRandomDishFromCourse('apetizers');
+        const appetizer = this.getRandomDishFromCourse('appetizers');
         const main = this.getRandomDishFromCourse('mains');
         const dessert = this.getRandomDishFromCourse('desserts');
         const totalPrice = appetizer.price + main.price + dessert.price;
@@ -50,9 +50,9 @@ const menu = {
     }
 };
 
-menu.addDishToCourse('apetizers','Ceasar Salad', 4.25);
-menu.addDishToCourse('apetizers','Garlic Toast with Avocado', 2);
-menu.addDishToCourse('apetizers','Eggs Benedict with Salmon', 5.75);
+menu.addDishToCourse('appetizers','Ceasar Salad', 4.25);
+menu.addDishToCourse('appetizers','Garlic Toast with Avocado', 2);
+menu.addDishToCourse('appetizers','Eggs Benedict with Salmon', 5.75);
 
 menu.addDishToCourse('mains','Spaghetti Carbonara', 6);
 menu.addDishToCourse('mains','Margharita Pizza', 8);
